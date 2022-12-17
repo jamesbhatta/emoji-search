@@ -3,27 +3,30 @@ import Header from "./Header";
 import SearchInput from "./SearchInput";
 import EmojiResults from "./EmojiResults";
 import filterEmoji from "./filterEmoji";
+import "./App.css";
 
 export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      filteredEmoji: filterEmoji("", 20)
+      filteredEmoji: filterEmoji("", 200),
     };
   }
 
-  handleSearchChange = event => {
+  handleSearchChange = (event) => {
     this.setState({
-      filteredEmoji: filterEmoji(event.target.value, 20)
+      filteredEmoji: filterEmoji(event.target.value, 200),
     });
   };
 
   render() {
     return (
-      <div>
+      <div className="main">
         <Header />
-        <SearchInput textChange={this.handleSearchChange} />
-        <EmojiResults emojiData={this.state.filteredEmoji} />
+        <div className="content-wrap">
+          <SearchInput textChange={this.handleSearchChange} />
+          <EmojiResults emojiData={this.state.filteredEmoji} />
+        </div>
       </div>
     );
   }

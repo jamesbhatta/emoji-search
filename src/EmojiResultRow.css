@@ -1,27 +1,35 @@
 .component-emoji-result-row {
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  height: 32px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #d2d6dc;
+  border-left: 1px solid #d2d6dc;
+  padding: 20px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: pointer;
+  gap: 1rem;
 }
-
-.component-emoji-result-row:hover {
-  background-color: #eee;
+.component-emoji-result-row:nth-child(5n + 1) {
+  border-left: none;
+}
+.component-emoji-result-row:nth-child(-n + 5) {
+  border-top: none;
 }
 
 .component-emoji-result-row img {
-  width: 32px;
-  height: 32px;
-  padding-right: 10px;
+  width: 50px;
+  height: 50px;
+  transition: all 250ms ease-in;
+}
+.component-emoji-result-row:hover img {
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #f1ebfe;
 }
 
 .component-emoji-result-row .title {
-  position: relative;
-  top: -8px;
+  font-size: 0.8rem;
 }
-
+/* 
 .component-emoji-result-row .info {
   float: right;
   position: relative;
@@ -33,4 +41,4 @@
 
 .component-emoji-result-row:hover .info {
   display: inline-block;
-}
+} */
